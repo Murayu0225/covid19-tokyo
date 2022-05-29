@@ -1,9 +1,9 @@
-name: Deploy (development)
+name: Deploy (test)
 
 on:
   push:
     branches:
-      - development
+      - test
 
 jobs:
   deploy:
@@ -42,5 +42,5 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_STOPCOVID19_TOKYO }}'
           channelId: live
-          projectId: stopcovid19-tokyo
-          target: development
+          projectId: dev-covid19-env
+          target: test
