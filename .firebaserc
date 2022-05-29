@@ -1,9 +1,9 @@
 {
   "projects": {
-    "default": "stopcovid19-tokyo"
+    "default": "dev-covid19-env"
   },
   "targets": {
-    "stopcovid19-tokyo": {
+    "dev-covid19-env": {
       "hosting": {
         "production": [
           "stopcovid19-tokyo"
@@ -12,7 +12,7 @@
           "stopcovid19-tokyo-staging"
         ],
         "development": [
-          "stopcovid19-tokyo-development"
+          "dev-covid19-env"
         ]
       }
     }
