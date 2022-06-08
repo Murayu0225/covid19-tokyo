@@ -1,5 +1,14 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
+    <v-overlay
+      opacity="0.3"
+      absolute
+      align-center
+      justify="center"
+      :value="!loaded"
+    >
+      <scale-loader color="#00A040" />
+    </v-overlay>
     <template #description>
       <slot name="description" />
     </template>
@@ -88,6 +97,7 @@ import isBetween from 'dayjs/plugin/isBetween'
 import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import type { TranslateResult } from 'vue-i18n'
+import ScaleLoader from 'vue-spinner/src/ScaleLoader.vue'
 
 import DateRangeSlider from '@/components/index/_shared/DateRangeSlider.vue'
 import DataSelector from '~/components/index/_shared/DataSelector.vue'
@@ -153,6 +163,7 @@ type Props = {
   url: string
   dayPeriod: number
   isSingleCard: boolean
+  loaded: boolean
 }
 
 const options: ThisTypedComponentOptionsWithRecordProps<
@@ -176,6 +187,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     DataViewDataSetPanel,
     DateRangeSlider,
     OpenDataLink,
+    ScaleLoader,
   },
   props: {
     title: {
@@ -230,6 +242,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       default: 60,
     },
     isSingleCard: {
+      type: Boolean,
+      default: false,
+    },
+    loaded: {
       type: Boolean,
       default: false,
     },

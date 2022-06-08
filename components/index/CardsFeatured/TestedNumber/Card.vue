@@ -15,6 +15,7 @@
         :url="'https://catalog.data.metro.tokyo.lg.jp/dataset/t000010d0000000086'"
         :day-period="isSingleCard ? 120 : 60"
         :is-single-card="isSingleCard"
+        :loaded="loaded"
       >
         <!-- 件.tested = 検査数 -->
         <template #additionalButton>
@@ -112,12 +113,18 @@ export default {
       inspectionsDataLabels,
       inspectionsTableLabels,
       mdiClipboardText,
+      loaded: false,
     }
   },
   computed: {
     isSingleCard() {
       return isSingleCard(this.$route.path)
     },
+  },
+  updated() {
+    setTimeout(() => {
+      this.loaded = true
+    }, 3000)
   },
 }
 </script>
