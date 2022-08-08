@@ -47,9 +47,10 @@
         <span>{{
           $t('検査数（{date}参考値（3日間移動平均））', { date: date })
         }}</span>
+        <!-- i18n用のファイルが自動生成されないのでどのような状況において生成がされるのか確認するために変更した -->
         <value-with-translatable-unit
           :value="items['検査数'].toLocaleString()"
-          :unit="{ text: '件.reports', translatable: true }"
+          :unit="{ text: '件.report', translatable: true }"
           :bold="true"
         />
       </div>
