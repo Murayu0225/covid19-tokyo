@@ -3,7 +3,6 @@ name: Auto-i18n Generator
 on:
   push:
     branches:
-      - development
       - unit
 
 jobs:
@@ -14,7 +13,7 @@ jobs:
       - name: Checkout development branch
         uses: actions/checkout@v3
         with:
-          ref: development
+          ref: unit
       - name: Set up Python 3.8
         uses: actions/setup-python@v4
         with:
