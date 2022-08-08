@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - development
+      - unit
 
 jobs:
   i18n-builder:
