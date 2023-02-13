@@ -16,6 +16,7 @@ import { PositiveStatusSummaryRepository } from '@/libraries/repositories/Positi
 import { StayingPopulationRepository } from '@/libraries/repositories/StayingPopulationRepository'
 import { TokyoRuleRepository } from '@/libraries/repositories/TokyoRuleRepository'
 import { VaccinationCountRepository } from '@/libraries/repositories/VaccinationCountRepository'
+import { VaccinationCountWithOmicronRepository } from '@/libraries/repositories/VaccinationCountWithOmicronRepository'
 import { VariantsRepository } from '@/libraries/repositories/VariantsRepository'
 
 export const state = () => ({
@@ -38,4 +39,5 @@ export const state = () => ({
   positiveStatus: new PositiveStatusRepository().data,
   monitoringItems: new MonitoringItemsRepository().data,
   positiveStatusSummary: new PositiveStatusSummaryRepository().data,
+  vaccinationCountWithOmicron: new VaccinationCountWithOmicronRepository().data,
 })
