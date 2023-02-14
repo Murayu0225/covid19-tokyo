@@ -273,6 +273,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         return dataset.slice(-1)[0]
       }
       const lastDay = this.labels.slice(-1)[0]
+
       return this.chartData.map((data, i) => {
         return {
           index: i,
@@ -314,7 +315,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           fill: false,
           order: i,
           lineTension: 0,
-          borderDash: i === 1 ? [4] : null,
+          borderDash: i === 1 || i === 3 ? [4] : null,
         }
       })
 
